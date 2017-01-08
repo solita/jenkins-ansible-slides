@@ -60,7 +60,7 @@
             <li>Includes irrelevant settings</li>
             <li>No comments</li>
             <li>No abstractions (or even copy &amp; paste)</li>
-            <li>Unreadable/undiffable XML configuration</li>
+            <li>Unreadable/un-diffable XML configuration</li>
           </ul>
         </li>
         <li class="slide">Junk commits + generated configuration = maintenance hell
@@ -74,6 +74,22 @@
 
     <section class="slide">
       <h2>Job DSL and Pipeline</h2>
+      <ul>
+        <li>Solve many problems by replacing GUI-based configuration with Groovy-based DSL scripts
+          <ul>
+            <li>Describe only the relevant parts of the configuration</li>
+            <li>Allow comments</li>
+            <li>Provide constructs for abstraction</li>
+            <li>Human-authored so easy to read and diff</li>
+          </ul>
+        </li>
+        <li class="slide">Unfortunately ignore the idea of separate testing environments
+          <ul>
+            <li>Keeps production pipelines at risk</li>
+            <li>Encourage committing untested code → junk commits</li>
+          </ul>
+        </li>
+      </ul>
     </section>
 
     <!-- End slides. -->
