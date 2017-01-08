@@ -1,0 +1,11 @@
+#tim {
+    image-rendering: pixelated;
+    max-width: 70%;
+    max-height: 70%;
+    float: left;
+    margin-right: -100%;
+}
+
+#tim.deck-previous {
+    transform: translate(-150%, 0);
+}
