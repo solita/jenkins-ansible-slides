@@ -50,24 +50,25 @@
       <div class="heading"><h2>A typical Jenkins setup<span class="solita-border"></span></h2></div>
       <img id="tim" class="slide move-left" src="img/TheIncredibleMachine-Title.gif">
       <ul>
-        <li class="slide">Configured using the GUI
+        <li class="slide">GUI-based configuration
           <ul>
-            <li class="bad">Includes irrelevant settings</li>
+            <li class="bad">Irrelevant settings</li>
             <li class="bad">No comments</li>
-            <li class="bad">No abstractions (or even copy &amp; paste)</li>
-            <li class="bad">Unreadable/un-diffable XML configuration</li>
+            <li class="bad">No abstractions</li>
+            <li class="bad">Can't copy &amp; paste</li>
+            <li class="bad">Generated XML</li>
           </ul>
         </li>
-        <li class="slide">No test environments
+        <li class="slide">A single environment
           <ul>
-            <li class="bad">Every change risks breaking the pipeline</li>
-            <li class="bad">Leads to lots of junk commits when used with VCS</li>
+            <li class="bad">Testing in production</li>
+            <li class="bad">Junk commits</li>
           </ul>
         </li>
-        <li class="slide">Generated configuration + junk version history = maintenance hell
+        <li class="slide">Messy VCS history
           <ul>
-            <li class="bad">Hard to answer questions like: <i>who</i> changed <i>what</i>, <i>when</i>, <i>how</i>, and <i>why</i>?</li>
-            <li class="bad">Hard to find problematic changes and roll them back</li>
+            <li class="bad">Hard to tell <i>who</i>, <i>what</i>, <i>when</i>, <i>how</i>, and <i>why</i>?</li>
+            <li class="bad">Hard to roll back individual changes</li>
           </ul>
         </li>
       </ul>
@@ -77,18 +78,18 @@
       <div class="heading"><h2>Job DSL and Pipeline<span class="solita-border"></span></h2></div>
       <img class="slide move-left" src="img/pipeline.png">
       <ul class="slide">
-        <li>Solve many problems by replacing GUI-based configuration with Groovy-based DSL scripts
+        <li>Groovy-based DSL scripts
           <ul>
-            <li class="good">Describe only the relevant parts of the configuration</li>
-            <li class="good">Allow comments</li>
-            <li class="good">Provide constructs for abstraction</li>
-            <li class="good">Human-authored so easy to read and diff</li>
+            <li class="good">Only relevant configuration</li>
+            <li class="good">Comments</li>
+            <li class="good">Constructs for abstraction</li>
+            <li class="good">Human-authored</li>
           </ul>
         </li>
-        <li class="slide">Unfortunately ignore the idea of separate testing environments
+        <li class="slide">A single environment
           <ul>
-            <li class="bad">Encourage testing in production</li>
-            <li class="bad">Encourage committing untested code → junk commits</li>
+            <li class="bad">Testing in production</li>
+            <li class="bad">Junk commits</li>
           </ul>
         </li>
       </ul>
@@ -97,17 +98,17 @@
     <section class="slide">
       <div class="heading"><h2>Ansible to the rescue!<span class="solita-border"></span></h2></div>
       <ul>
-        <li>Manage Job DSL and Pipeline scripts with Ansible</li>
-        <li>Provision multiple environments
+        <li>Multiple environments
           <ul>
-            <li>Keep changing parts in group vars</li>
-            <li>Use templating to fill them into DSL scripts</li>
+            <li>Inventory per env</li>
+            <li>Group vars for env details</li>
           </ul>
         </li>
-        <li>Use a testing environment during development
+        <li>Templating for DSL scripts</li>
+        <li>Develop in Vagrant
           <ul>
-            <li class="good">Only commit tested changes!</li>
-            <li class="good">Only push tested changes to production!</li>
+            <li class="good">Test before commit</li>
+            <li class="good">Commit before prod</li>
           </ul>
         </li>
       </ul>
