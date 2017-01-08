@@ -386,3 +386,15 @@ a:hover, a:focus {
 .deck-menu .deck-current, .no-touch .deck-menu .slide:hover {
   background: #ddf;
 }
+
+.heading {
+  position: relative;
+}
+
+.solita-border {
+  position: absolute;
+  left: 0px;
+  width: 1.5em;
+  bottom: -15px;
+  border-bottom: 5px solid #EF4A8D;
+}

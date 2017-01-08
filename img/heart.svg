@@ -1,1 +1,62 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" enable-background="new 0 0 64 64"><g fill="#ff5a79"><path d="m28.3 32.2c1.3-7.9-11.5-20.7-22.3-10.3-12 11.7 7.2 37.1 8 40.1 2.6-.8 34.4-1.6 36-18.2 1.3-15.4-17.2-17.4-21.7-11.6"/><path d="m59.2 3.6c-6.8-5.1-13.1 3.1-11.7 7-3.3-2.9-13-.5-11.3 7.7 1.9 9.1 19.3 7.3 20.9 7.7.4-1.5 9.3-16.9 2.1-22.4"/></g></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 64 64"
+   enable-background="new 0 0 64 64"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r"
+   sodipodi:docname="heart.svg">
+  <metadata
+     id="metadata14">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs12" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1372"
+     inkscape:window-height="734"
+     id="namedview10"
+     showgrid="false"
+     inkscape:zoom="3.6875"
+     inkscape:cx="2.3050847"
+     inkscape:cy="32"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2" />
+  <g
+     fill="#ff5a79"
+     id="g4"
+     style="fill:#ef4a8d;fill-opacity:1">
+    <path
+       d="m28.3 32.2c1.3-7.9-11.5-20.7-22.3-10.3-12 11.7 7.2 37.1 8 40.1 2.6-.8 34.4-1.6 36-18.2 1.3-15.4-17.2-17.4-21.7-11.6"
+       id="path6"
+       style="fill:#ef4a8d;fill-opacity:1" />
+    <path
+       d="m59.2 3.6c-6.8-5.1-13.1 3.1-11.7 7-3.3-2.9-13-.5-11.3 7.7 1.9 9.1 19.3 7.3 20.9 7.7.4-1.5 9.3-16.9 2.1-22.4"
+       id="path8"
+       style="fill:#ef4a8d;fill-opacity:1" />
+  </g>
+</svg>
