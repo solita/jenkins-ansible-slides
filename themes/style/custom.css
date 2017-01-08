@@ -1,13 +1,23 @@
-#tim {
-    image-rendering: pixelated;
+img {
     max-width: 70%;
     max-height: 70%;
+}
+
+#tim {
+    image-rendering: pixelated;
+}
+
+.move-left {
     float: left;
     margin-right: -100%;
 }
 
-#tim.deck-previous, #tim.deck-before {
-    transform: translate(-150%, 0);
+.move-left.deck-previous, .move-left.deck-before {
+    transform: translate(-300%, 0);
+}
+
+.move-left.deck-current {
+    transform: none;
 }
 
 i {
