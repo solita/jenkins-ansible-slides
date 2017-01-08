@@ -25,7 +25,7 @@ i {
 }
 
 .bad {
-  color: #ab4642;
+  color: #CC342B;
 }
 
 .bad:before {
@@ -33,7 +33,7 @@ i {
 }
 
 .good {
-  color: #a1b56c;
+  color: #198844;
 }
 
 .good:before {
