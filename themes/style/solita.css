@@ -391,7 +391,8 @@ a:hover, a:focus {
   position: relative;
 }
 
-.solita-border {
+.heading h2:after {
+  content: "";
   position: absolute;
   left: 0px;
   width: 1.5em;
