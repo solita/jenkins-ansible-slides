@@ -132,3 +132,44 @@ i {
   opacity: 1.0;
   font-weight: bold;
 }
+
+/* pipeline-checkout-stage */
+
+.pipeline-checkout-stage {
+  opacity: 0.1;
+}
+
+.on-slide-pipeline-checkout-git .pipeline-checkout-stage, .on-slide-pipeline-checkout-rsync .pipeline-checkout-stage {
+  opacity: 0.8;
+}
+
+.on-slide-pipeline-checkout-stage .pipeline-checkout-stage {
+  opacity: 1.0;
+  font-weight: bold;
+}
+
+/* pipeline-checkout-git */
+
+.pipeline-checkout-git {
+  opacity: 0.1;
+}
+
+.on-slide-pipeline-checkout-rsync .pipeline-checkout-git {
+  opacity: 0.8;
+}
+
+.on-slide-pipeline-checkout-git .pipeline-checkout-git {
+  opacity: 1.0;
+  font-weight: bold;
+}
+
+/* pipeline-checkout-rsync */
+
+.pipeline-checkout-rsync {
+  opacity: 0.1;
+}
+
+.on-slide-pipeline-checkout-rsync .pipeline-checkout-rsync {
+  opacity: 1.0;
+  font-weight: bold;
+}

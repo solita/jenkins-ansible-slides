@@ -188,7 +188,7 @@
     </section>
 
     <section class="slide">
-      <div class="heading"><h2>Job Configuration</h2></div>
+      <div class="heading"><h2>Job Config</h2></div>
       <h3><code>jobs/Hello.groovy.j2</code></h3>
 <pre><code class="groovy"><span class="job-dsl-vars">APP_GIT = "{{ app_git | default('') }}"</span>
 <span class="job-dsl-job">pipelineJob('hello') {
@@ -214,9 +214,48 @@
     </section>
 
     <section class="slide">
-      <div class="heading"><h2>Job Configuration &ndash; result</h2></div>
+      <div class="heading"><h2>Job Config &ndash; Result</h2></div>
       <img class="slide move-left" src="img/build_triggers.png">
       <img class="slide move-left" src="img/pipeline_script.png">
+    </section>
+
+    <section class="slide">
+      <div class="heading"><h2>Pipeline Config &ndash; Vars</h2></div>
+      <h3><code>jobs/pipeline/Hello.groovy.j2</code></h3>
+<pre><code class="groovy">APP_GIT = "{{ app_git | default('') }}"
+APP_PATH = "{{ app_path | default('') }}"
+
+ANSIBLE_GIT = "{{ ansible_git | default('') }}"
+ANSIBLE_PATH = "{{ ansible_path | default('') }}"
+
+QA_INVENTORY = "{{ qa_inventory }}"
+PROD_INVENTORY = "{{ prod_inventory }}"
+</code></pre>
+    </section>
+
+    <section class="slide">
+      <div class="heading"><h2>Pipeline Config &ndash; Checkout</h2></div>
+      <h3><code>jobs/pipeline/Hello.groovy.j2</code></h3>
+<pre><code class="groovy"><span class="pipeline-checkout-stage">node {
+    stage('Checkout') {</span>
+        <span class="pipeline-checkout-git">if (APP_GIT) {
+            checkout([
+                $class: 'GitSCM',
+                extensions: [[
+                    $class: 'RelativeTargetDirectory',
+                    relativeTargetDir: 'app'
+                ]],
+                userRemoteConfigs: [[url: APP_GIT]]
+            ])
+        }</span><span class="pipeline-checkout-rsync"> else if (APP_PATH) {
+            // Ignore "permission denied" errors
+            sh "rsync -av ${APP_PATH}/ app | true"
+        }</span>
+    <span class="pipeline-checkout-stage">}</span>
+</code></pre>
+      <div id="pipeline-checkout-stage" class="slide"></div>
+      <div id="pipeline-checkout-git" class="slide"></div>
+      <div id="pipeline-checkout-rsync" class="slide"></div>
     </section>
 
     <section class="slide">
