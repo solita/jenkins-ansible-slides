@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=1024, user-scalable=no">
 
-  <title>Your deck.js Presentation</title>
+  <title>Jenkins Configuration Management with Ansible</title>
 
   <!-- Required stylesheet -->
   <link rel="stylesheet" media="screen" href="core/deck.core.css">
@@ -48,15 +48,32 @@
     <section class="slide">
       <h2>A typical Jenkins setup</h2>
       <img id="tim" class="slide" src="img/TheIncredibleMachine-Title.gif">
-      <ul class="slide">
-        <li>Jee</li>
-        <li>Joo</li>
-        <li>Foo</li>
+      <ul>
+        <li class="slide">No test environments
+          <ul>
+            <li>Every change risks breaking the pipeline</li>
+            <li>Leads to lots of junk commits when used with VCS</li>
+          </ul>
+        </li>
+        <li class="slide">Configured using the GUI
+          <ul>
+            <li>Includes irrelevant settings</li>
+            <li>No comments</li>
+            <li>No abstractions (or even copy &amp; paste)</li>
+            <li>Unreadable/undiffable XML configuration</li>
+          </ul>
+        </li>
+        <li class="slide">Junk commits + generated configuration = maintenance hell
+          <ul>
+            <li>Hard to answer questions like: <i>who</i> changed <i>what</i>, <i>when</i>, <i>how</i>, and <i>why</i>?</li>
+            <li>Hard to find problematic changes and roll them back</li>
+          </ul>
+        </li>
       </ul>
     </section>
 
     <section class="slide">
-      <h2>Something else</h2>
+      <h2>Job DSL and Pipeline</h2>
     </section>
 
     <!-- End slides. -->

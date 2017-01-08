@@ -6,6 +6,10 @@
     margin-right: -100%;
 }
 
-#tim.deck-previous {
+#tim.deck-previous, #tim.deck-before {
     transform: translate(-150%, 0);
+}
+
+i {
+  font-style: italic;
 }
