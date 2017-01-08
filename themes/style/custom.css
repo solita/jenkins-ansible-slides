@@ -43,3 +43,51 @@ i {
 .bad, .good {
   font-weight: bold;
 }
+
+.vagrant-synced-folder {
+  opacity: 0.0;
+}
+
+.on-slide-vagrant-ansible-provisioner .vagrant-synced-folder, .on-slide-vagrant-ansible-groups .vagrant-synced-folder, .on-slide-vagrant-ansible-vars .vagrant-synced-folder {
+  opacity: 0.5;
+}
+
+.on-slide-vagrant-synced-folder .vagrant-synced-folder {
+  opacity: 1.0;
+  font-weight: bold;
+}
+
+.vagrant-ansible-provisioner {
+  opacity: 0.0;
+}
+
+.on-slide-vagrant-ansible-groups .vagrant-ansible-provisioner, .on-slide-vagrant-ansible-vars .vagrant-ansible-provisioner {
+  opacity: 0.5;
+}
+
+.on-slide-vagrant-ansible-provisioner .vagrant-ansible-provisioner {
+  opacity: 1.0;
+  font-weight: bold;
+}
+
+.vagrant-ansible-groups {
+  opacity: 0.0;
+}
+
+.on-slide-vagrant-ansible-vars .vagrant-ansible-groups {
+  opacity: 0.5;
+}
+
+.on-slide-vagrant-ansible-groups .vagrant-ansible-groups {
+  opacity: 1.0;
+  font-weight: bold;
+}
+
+.vagrant-ansible-vars {
+  opacity: 0.0;
+}
+
+.on-slide-vagrant-ansible-vars .vagrant-ansible-vars {
+  opacity: 1.0;
+  font-weight: bold;
+}

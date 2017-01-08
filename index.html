@@ -114,6 +114,63 @@
       </ul>
     </section>
 
+    <section class="slide">
+      <h1>Example Time</h1>
+    </section>
+
+    <section class="slide">
+      <div class="heading"><h2>Environments</h2></div>
+      <ul>
+        <li class="slide"><code>dev</code>
+          <ul>
+            <li>Jenkins, config from workdir</li>
+            <li>Defined in <code>Vagrantfile</code></li>
+          </ul>
+        </li>
+        <li class="slide"><code>local</code>
+          <ul>
+            <li>Deployment target for <code>dev</code> Jenkins</li>
+            <li>Defined in <code>environments/local/</code></li>
+          </ul>
+        </li>
+        <hr>
+        <li class="slide"><code>ci</code>
+          <ul>
+            <li>Jenkins, config from VCS</li>
+            <li>Defined in <code>environments/ci/</code></li>
+          </ul>
+        </li>
+        <li class="slide"><code>qa</code> &amp; <code>prod</code>
+          <ul>
+            <li>Deployment targets for <code>ci</code> Jenkins</li>
+            <li>Defined in <code>environments/&lt;env&gt;/</code></li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <div class="heading"><h2>dev</h2></div>
+      <h3><code>Vagrantfile</code></h3>
+<pre><code class="ruby"><span class="vagrant-synced-folder">config.vm.synced_folder '../hello-java', '/hello-java'</span>
+<span class="vagrant-ansible-provisioner">config.vm.provision 'ansible' do |ansible|
+  ansible.playbook = 'site.yml'</span>
+  <span class="vagrant-ansible-groups">ansible.groups = {
+    'jenkins' =&gt; ['default'],</span>
+    <span class="vagrant-ansible-vars">'jenkins:vars' =&gt; {'app_path'       =&gt; '/hello-java',
+                       'ansible_path'   =&gt; '/vagrant',
+                       'qa_inventory'   =&gt; 'environments/local/inventory',
+                       'prod_inventory' =&gt; 'environments/local/inventory'},</span>
+    <span class="vagrant-ansible-groups">'app' =&gt; ['default']
+  }</span>
+<span class="vagrant-ansible-provisioner">end</span>
+</code></pre>
+      <div class="slide" id="vagrant-synced-folder"></div>
+      <div class="slide" id="vagrant-ansible-provisioner"></div>
+      <div class="slide" id="vagrant-ansible-groups"></div>
+      <div class="slide" id="vagrant-ansible-vars"></div>
+    </section>
+
     <!-- End slides. -->
 
     <!-- Begin extension snippets. Add or remove as needed. -->
@@ -133,11 +190,15 @@
 <script src="jquery.min.js"></script>
 <script src="core/deck.core.js"></script>
 
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
 <!-- Initialize the deck. You can put this in an external file if desired. -->
 <script>
   $(function() {
     $.deck('.slide');
   });
 </script>
+<script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>
