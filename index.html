@@ -259,6 +259,23 @@ PROD_INVENTORY = "{{ prod_inventory }}"
     </section>
 
     <section class="slide">
+      <div class="heading"><h2>Pipeline Config &ndash; Deploy</h2></div>
+      <h3><code>jobs/pipeline/Hello.groovy.j2</code></h3>
+<pre><code class="groovy">    stage('Deploy to QA') {
+        dir('ansible') {
+            ansiblePlaybook([
+                playbook: 'deploy.yml',
+                inventory: QA_INVENTORY,
+                extraVars: [
+                    hello_jar: '../app/target/hello.jar'
+                ],
+            ])
+        }
+    }
+</code></pre>
+    </section>
+
+    <section class="slide">
       <div class="vcenter">
         <img src="img/solita.png">
       </div>
