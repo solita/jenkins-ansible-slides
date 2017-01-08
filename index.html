@@ -49,24 +49,24 @@
       <h2>A typical Jenkins setup</h2>
       <img id="tim" class="slide move-left" src="img/TheIncredibleMachine-Title.gif">
       <ul>
-        <li class="slide">No test environments
-          <ul>
-            <li>Every change risks breaking the pipeline</li>
-            <li>Leads to lots of junk commits when used with VCS</li>
-          </ul>
-        </li>
         <li class="slide">Configured using the GUI
           <ul>
-            <li>Includes irrelevant settings</li>
-            <li>No comments</li>
-            <li>No abstractions (or even copy &amp; paste)</li>
-            <li>Unreadable/un-diffable XML configuration</li>
+            <li class="bad">Includes irrelevant settings</li>
+            <li class="bad">No comments</li>
+            <li class="bad">No abstractions (or even copy &amp; paste)</li>
+            <li class="bad">Unreadable/un-diffable XML configuration</li>
           </ul>
         </li>
-        <li class="slide">Junk commits + generated configuration = maintenance hell
+        <li class="slide">No test environments
           <ul>
-            <li>Hard to answer questions like: <i>who</i> changed <i>what</i>, <i>when</i>, <i>how</i>, and <i>why</i>?</li>
-            <li>Hard to find problematic changes and roll them back</li>
+            <li class="bad">Every change risks breaking the pipeline</li>
+            <li class="bad">Leads to lots of junk commits when used with VCS</li>
+          </ul>
+        </li>
+        <li class="slide">Generated configuration + junk version history = maintenance hell
+          <ul>
+            <li class="bad">Hard to answer questions like: <i>who</i> changed <i>what</i>, <i>when</i>, <i>how</i>, and <i>why</i>?</li>
+            <li class="bad">Hard to find problematic changes and roll them back</li>
           </ul>
         </li>
       </ul>
@@ -78,16 +78,16 @@
       <ul class="slide">
         <li>Solve many problems by replacing GUI-based configuration with Groovy-based DSL scripts
           <ul>
-            <li>Describe only the relevant parts of the configuration</li>
-            <li>Allow comments</li>
-            <li>Provide constructs for abstraction</li>
-            <li>Human-authored so easy to read and diff</li>
+            <li class="good">Describe only the relevant parts of the configuration</li>
+            <li class="good">Allow comments</li>
+            <li class="good">Provide constructs for abstraction</li>
+            <li class="good">Human-authored so easy to read and diff</li>
           </ul>
         </li>
         <li class="slide">Unfortunately ignore the idea of separate testing environments
           <ul>
-            <li>Keeps production pipelines at risk</li>
-            <li>Encourage committing untested code → junk commits</li>
+            <li class="bad">Keeps production pipelines at risk</li>
+            <li class="bad">Encourage committing untested code → junk commits</li>
           </ul>
         </li>
       </ul>

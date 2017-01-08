@@ -23,3 +23,23 @@ img {
 i {
   font-style: italic;
 }
+
+.bad {
+  color: #ab4642;
+}
+
+.bad:before {
+  content: "✘";
+}
+
+.good {
+  color: #a1b56c;
+}
+
+.good:before {
+  content: "✔";
+}
+
+.bad, .good {
+  font-weight: bold;
+}
