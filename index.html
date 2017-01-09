@@ -129,27 +129,23 @@
       <ul>
         <li class="slide"><code>dev</code>
           <ul>
-            <li>Jenkins, config from workdir</li>
-            <li>Defined in <code>Vagrantfile</code></li>
+            <li>Vagrant box for Jenkins and deployments</li>
           </ul>
         </li>
         <li class="slide"><code>local</code>
           <ul>
-            <li>Deployment target for <code>dev</code> Jenkins</li>
-            <li>Defined in <code>environments/local/</code></li>
+            <li>Deployment target for dev Jenkins</li>
           </ul>
         </li>
         <hr>
         <li class="slide"><code>ci</code>
           <ul>
-            <li>Jenkins, config from VCS</li>
-            <li>Defined in <code>environments/ci/</code></li>
+            <li>Production Jenkins</li>
           </ul>
         </li>
         <li class="slide"><code>qa</code> &amp; <code>prod</code>
           <ul>
-            <li>Deployment targets for <code>ci</code> Jenkins</li>
-            <li>Defined in <code>environments/&lt;env&gt;/</code></li>
+            <li>Deployment targets for production Jenkins</li>
           </ul>
         </li>
       </ul>
