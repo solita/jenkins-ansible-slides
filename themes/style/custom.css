@@ -150,9 +150,6 @@ code span {
 
 .on-slide-project-env .project-env {
     opacity: 1.0;
-}
-
-.on-slide-project-env .project-env .file {
     font-weight: bold;
 }
 
@@ -171,9 +168,6 @@ code span {
 
 .on-slide-project-playbooks .project-playbooks {
     opacity: 1.0;
-}
-
-.on-slide-project-playbooks .project-playbooks .file {
     font-weight: bold;
 }
 
@@ -191,9 +185,6 @@ code span {
 
 .on-slide-project-jobs .project-jobs {
     opacity: 1.0;
-}
-
-.on-slide-project-jobs .project-jobs .file {
     font-weight: bold;
 }
 
@@ -210,9 +201,6 @@ code span {
 .on-slide-project-vagrant .project-vagrant
 {
     opacity: 1.0;
-}
-
-.on-slide-project-vagrant .project-vagrant .file {
     font-weight: bold;
 }
 

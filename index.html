@@ -127,23 +127,23 @@
     <section class="slide">
       <div class="heading"><h2>Ansible Project</h2></div>
 <pre><code>jenkins-ansible-demo/
-<span class="project-env">├── <span class="file">environments</span></span>
-<span class="project-playbooks">│</span>   <span class="project-env">├── <span class="file">ci</span></span>
-<span class="project-playbooks">│</span>   <span class="project-env">│   ├── <span class="file">group_vars</span></span>
-<span class="project-playbooks">│</span>   <span class="project-env">│   │   └── <span class="file">jenkins.yml</span></span>
-<span class="project-playbooks">│</span>   <span class="project-env">│   └── <span class="file">inventory</span></span>
-<span class="project-playbooks">│</span>   <span class="project-env">├── <span class="file">qa</span></span>
-<span class="project-playbooks">│</span>   <span class="project-env">│   └── <span class="file">inventory</span></span>
-<span class="project-playbooks">│</span>   <span class="project-env">├── <span class="file">prod</span></span>
-<span class="project-playbooks">│</span>   <span class="project-vagrant">│</span>   <span class="project-env">└── <span class="file">inventory</span></span>
-<span class="project-playbooks">│</span>   <span class="project-vagrant">└── <span class="file">local</span></span>
-<span class="project-playbooks">│</span>       <span class="project-vagrant">└── <span class="file">inventory</span></span>
-<span class="project-playbooks">├</span><span class="project-jobs">── <span class="file">jobs</span></span>
-<span class="project-playbooks">│</span>   <span class="project-jobs">├── <span class="file">pipeline</span></span>
-<span class="project-playbooks">│</span>   <span class="project-jobs">│   └── <span class="file">Hello.groovy.j2</span></span>
-<span class="project-playbooks">│</span>   <span class="project-jobs">└── <span class="file">Hello.groovy</span></span>
-<span class="project-playbooks">├── <span class="file">jenkins.yml</span></span>
-<span class="project-vagrant">└── <span class="file">Vagrantfile</span></span>
+<span class="project-env">  environments/</span>
+<span class="project-env">    ci/</span>
+<span class="project-env">      group_vars/</span>
+<span class="project-env">        jenkins.yml</span>
+<span class="project-env">      inventory</span>
+<span class="project-env">    qa/</span>
+<span class="project-env">      inventory</span>
+<span class="project-env">    prod/</span>
+<span class="project-env">      inventory</span>
+<span class="project-vagrant">    local/</span>
+<span class="project-vagrant">      inventory</span>
+<span class="project-jobs">  jobs/</span>
+<span class="project-jobs">    pipeline/</span>
+<span class="project-jobs">      Hello.groovy.j2</span>
+<span class="project-jobs">    Hello.groovy</span>
+<span class="project-playbooks">  jenkins.yml</span>
+<span class="project-vagrant">  Vagrantfile</span>
 </code></pre>
       <div class="slide" id="project-env"></div>
       <div class="slide" id="project-playbooks"></div>
