@@ -173,3 +173,77 @@ i {
   opacity: 1.0;
   font-weight: bold;
 }
+
+/* project-env */
+
+.project-env {
+    opacity: 0.1;
+}
+
+.on-slide-project-env .project-env {
+    opacity: 1.0;
+}
+
+.on-slide-project-env .project-env .file {
+    font-weight: bold;
+}
+
+.on-slide-project-playbooks .project-env,
+.on-slide-project-jobs .project-env,
+.on-slide-project-vagrant .project-env
+{
+    opacity: 0.8;
+}
+
+/* project-playbooks */
+
+.project-playbooks {
+    opacity: 0.1;
+}
+
+.on-slide-project-playbooks .project-playbooks {
+    opacity: 1.0;
+}
+
+.on-slide-project-playbooks .project-playbooks .file {
+    font-weight: bold;
+}
+
+.on-slide-project-jobs .project-playbooks,
+.on-slide-project-vagrant .project-playbooks
+{
+    opacity: 0.8;
+}
+
+/* project-jobs */
+
+.project-jobs {
+    opacity: 0.1;
+}
+
+.on-slide-project-jobs .project-jobs {
+    opacity: 1.0;
+}
+
+.on-slide-project-jobs .project-jobs .file {
+    font-weight: bold;
+}
+
+.on-slide-project-vagrant .project-jobs {
+    opacity: 0.8;
+}
+
+/* project-vagrant */
+
+.project-vagrant {
+    opacity: 0.1;
+}
+
+.on-slide-project-vagrant .project-vagrant
+{
+    opacity: 1.0;
+}
+
+.on-slide-project-vagrant .project-vagrant .file {
+    font-weight: bold;
+}
