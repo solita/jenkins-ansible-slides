@@ -232,33 +232,18 @@ localhost ansible_connection=local
 
     <section class="slide">
       <div class="heading"><h2>Job Config</h2></div>
-      <h3><code>jobs/Hello.groovy.j2</code></h3>
-<pre><code class="groovy"><span class="job-dsl-vars">APP_GIT = "{{ app_git | default('') }}"</span>
-<span class="job-dsl-job">pipelineJob('hello') {
-    scm {
-        if (APP_GIT) {
-            git(APP_GIT)
-        }
-    }
-    triggers {
-        scm('H/5 * * * *')
-    }</span>
-    <span class="job-dsl-definition">definition {
+      <div class="slide move-left">
+        <h3><code>jobs/Hello.groovy</code> (Job DSL)</h3>
+<pre><code class="groovy">pipelineJob('hello') {
+    definition {
         cps {
             script(readFileFromWorkspace('pipeline/Hello.groovy'))
             sandbox()
         }
-    }</span>
-<span class="job-dsl-job">}</span>
+    }
+}
 </code></pre>
-      <div class="slide" id="job-dsl-vars"></div>
-      <div class="slide" id="job-dsl-job"></div>
-      <div class="slide" id="job-dsl-definition"></div>
-    </section>
-
-    <section class="slide">
-      <div class="heading"><h2>Job Config &ndash; Result</h2></div>
-      <img class="slide move-left" src="img/build_triggers.png">
+      </div>
       <img class="slide move-left" src="img/pipeline_script.png">
     </section>
 
