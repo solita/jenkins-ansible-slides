@@ -53,11 +53,18 @@ code span {
     transition: opacity 0.3s;
 }
 
+/* vagrant-synced-folder */
+
 .vagrant-synced-folder {
   opacity: 0.1;
 }
 
-.on-slide-vagrant-ansible-provisioner .vagrant-synced-folder, .on-slide-vagrant-ansible-groups .vagrant-synced-folder, .on-slide-vagrant-ansible-vars .vagrant-synced-folder {
+.on-slide-vagrant-ansible-provisioner .vagrant-synced-folder,
+.on-slide-vagrant-ansible-groups .vagrant-synced-folder,
+.on-slide-vagrant-ansible-vars .vagrant-synced-folder,
+.on-slide-vagrant-paths .vagrant-synced-folder,
+.on-slide-vagrant-inventories .vagrant-synced-folder,
+.on-slide-vagrant-security .vagrant-synced-folder {
   opacity: 0.8;
 }
 
@@ -66,11 +73,17 @@ code span {
   font-weight: bold;
 }
 
+/* vagrant-ansible-provisioner */
+
 .vagrant-ansible-provisioner {
   opacity: 0.1;
 }
 
-.on-slide-vagrant-ansible-groups .vagrant-ansible-provisioner, .on-slide-vagrant-ansible-vars .vagrant-ansible-provisioner {
+.on-slide-vagrant-ansible-groups .vagrant-ansible-provisioner,
+.on-slide-vagrant-ansible-vars .vagrant-ansible-provisioner,
+.on-slide-vagrant-paths .vagrant-ansible-provisioner,
+.on-slide-vagrant-inventories .vagrant-ansible-provisioner,
+.on-slide-vagrant-security .vagrant-ansible-provisioner {
   opacity: 0.8;
 }
 
@@ -79,11 +92,16 @@ code span {
   font-weight: bold;
 }
 
+/* vagrant-ansible-groups */
+
 .vagrant-ansible-groups {
   opacity: 0.1;
 }
 
-.on-slide-vagrant-ansible-vars .vagrant-ansible-groups {
+.on-slide-vagrant-ansible-vars .vagrant-ansible-groups,
+.on-slide-vagrant-paths .vagrant-ansible-groups,
+.on-slide-vagrant-inventories .vagrant-ansible-groups,
+.on-slide-vagrant-security .vagrant-ansible-groups {
   opacity: 0.8;
 }
 
@@ -92,6 +110,8 @@ code span {
   font-weight: bold;
 }
 
+/* vagrant-ansible-vars */
+
 .vagrant-ansible-vars {
   opacity: 0.1;
 }
@@ -99,6 +119,54 @@ code span {
 .on-slide-vagrant-ansible-vars .vagrant-ansible-vars {
   opacity: 1.0;
   font-weight: bold;
+}
+
+.on-slide-vagrant-paths .vagrant-ansible-vars,
+.on-slide-vagrant-inventories .vagrant-ansible-vars,
+.on-slide-vagrant-security .vagrant-ansible-vars {
+    opacity: 0.8;
+}
+
+/* vagrant-paths */
+
+.vagrant-paths {
+    opacity: 0.1;
+}
+
+.on-slide-vagrant-paths .vagrant-paths {
+    opacity: 1.0;
+    font-weight: bold;
+}
+
+.on-slide-vagrant-inventories .vagrant-paths,
+.on-slide-vagrant-security .vagrant-paths {
+    opacity: 0.8;
+}
+
+/* vagrant-inventories */
+
+.vagrant-inventories {
+    opacity: 0.1;
+}
+
+.on-slide-vagrant-inventories .vagrant-inventories {
+    opacity: 1.0;
+    font-weight: bold;
+}
+
+.on-slide-vagrant-security .vagrant-inventories {
+    opacity: 0.8;
+}
+
+/* vagrant-security */
+
+.vagrant-security {
+    opacity: 0.1;
+}
+
+.on-slide-vagrant-security .vagrant-security {
+    opacity: 1.0;
+    font-weight: bold;
 }
 
 /* job-dsl-vars */

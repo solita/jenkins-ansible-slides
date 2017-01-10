@@ -193,25 +193,30 @@ prod_inventory: environments/prod/inventory</span>
 
     <section class="slide">
       <div class="heading"><h2>Dev Environment</h2></div>
-      <h3><code>Vagrantfile</code></h3>
+      <div class="slide">
+        <h3><code>Vagrantfile</code></h3>
 <pre><code class="ruby"><span class="vagrant-synced-folder">config.vm.synced_folder '../hello-java', '/hello-java'</span>
 <span class="vagrant-ansible-provisioner">config.vm.provision 'ansible' do |ansible|
   ansible.playbook = 'site.yml'</span>
   <span class="vagrant-ansible-groups">ansible.groups = {
     'jenkins' =&gt; ['default'],</span>
-    <span class="vagrant-ansible-vars">'jenkins:vars' =&gt; {'app_path'       =&gt; '/hello-java',
-                       'ansible_path'   =&gt; '/vagrant',
-                       'qa_inventory'   =&gt; 'environments/local/inventory',
-                       'prod_inventory' =&gt; 'environments/local/inventory',
-                       'solita_jenkins_security_realm' =&gt; 'none'},</span>
+    <span class="vagrant-ansible-vars">'jenkins:vars' =&gt; {</span><span class="vagrant-paths">'app_path'       =&gt; '/hello-java',
+                       'ansible_path'   =&gt; '/vagrant',</span>
+                       <span class="vagrant-inventories">'qa_inventory'   =&gt; 'environments/local/inventory',
+                       'prod_inventory' =&gt; 'environments/local/inventory',</span>
+                       <span class="vagrant-security">'solita_jenkins_security_realm' =&gt; 'none'</span><span class="vagrant-ansible-vars">},</span>
     <span class="vagrant-ansible-groups">'app' =&gt; ['default']
   }</span>
 <span class="vagrant-ansible-provisioner">end</span>
 </code></pre>
-      <div class="slide" id="vagrant-synced-folder"></div>
-      <div class="slide" id="vagrant-ansible-provisioner"></div>
-      <div class="slide" id="vagrant-ansible-groups"></div>
-      <div class="slide" id="vagrant-ansible-vars"></div>
+        <div class="slide" id="vagrant-synced-folder"></div>
+        <div class="slide" id="vagrant-ansible-provisioner"></div>
+        <div class="slide" id="vagrant-ansible-groups"></div>
+        <div class="slide" id="vagrant-ansible-vars"></div>
+        <div class="slide" id="vagrant-paths"></div>
+        <div class="slide" id="vagrant-inventories"></div>
+        <div class="slide" id="vagrant-security"></div>
+      </div>
     </section>
 
     <section class="slide">
