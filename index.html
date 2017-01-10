@@ -169,19 +169,26 @@ jenkins-ansible-demo3
 
     <section class="slide">
       <div class="heading"><h2>CI Environment</h2></div>
-      <h3><code>environments/ci/inventory</code></h3>
+      <div class="slide">
+        <h3><code>environments/ci/inventory</code></h3>
 <pre><code class="ini">[jenkins]
 jenkins-ansible-demo1</code></pre>
-      <h3><code>environments/ci/group_vars/jenkins.yml</code></h3>
-<pre><code class="yaml">app_git:     https://github.com/noidi/hello-java.git
-ansible_git: https://github.com/solita/jenkins-ansible-demo.git
+      </div>
+      <div class="slide">
+        <h3><code>environments/ci/group_vars/jenkins.yml</code></h3>
+<pre><code class="yaml"><span class="ci-git">app_git:     https://github.com/noidi/hello-java.git
+ansible_git: https://github.com/solita/jenkins-ansible-demo.git</span>
 
-qa_inventory:   environments/qa/inventory
-prod_inventory: environments/prod/inventory
+<span class="ci-inventories">qa_inventory:   environments/qa/inventory
+prod_inventory: environments/prod/inventory</span>
 
-solita_jenkins_users:
-  - admin
+<span class="ci-users">solita_jenkins_users:
+  - admin</span>
 </code></pre>
+        <div id="ci-git" class="slide"></div>
+        <div id="ci-inventories" class="slide"></div>
+        <div id="ci-users" class="slide"></div>
+      </div>
     </section>
 
     <section class="slide">

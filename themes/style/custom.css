@@ -204,6 +204,48 @@ code span {
     font-weight: bold;
 }
 
+/* ci-git */
+
+.ci-git {
+    opacity: 0.1;
+}
+
+.on-slide-ci-git .ci-git {
+    opacity: 1.0;
+    font-weight: bold;
+}
+
+.on-slide-ci-inventories .ci-git,
+.on-slide-ci-users .ci-git {
+    opacity: 0.8;
+}
+
+/* ci-inventories */
+
+.ci-inventories {
+    opacity: 0.1;
+}
+
+.on-slide-ci-inventories .ci-inventories {
+    opacity: 1.0;
+    font-weight: bold;
+}
+
+.on-slide-ci-users .ci-inventories {
+    opacity: 0.8;
+}
+
+/* ci-users */
+
+.ci-users {
+    opacity: 0.1;
+}
+
+.on-slide-ci-users .ci-users {
+    opacity: 1.0;
+    font-weight: bold;
+}
+
 /* pipeline */
 
 .on-slide-pipeline-vars #pipeline-dsl,
