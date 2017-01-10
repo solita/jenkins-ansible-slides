@@ -152,6 +152,24 @@
     </section>
 
     <section class="slide">
+      <div class="heading"><h2>CI Env</h2></div>
+      <h3><code>environments/ci/inventory</code></h3>
+<pre><code class="ini">[jenkins]
+jenkins-ansible-demo1</code></pre>
+      <h3><code>environments/ci/group_vars/jenkins.yml</code></h3>
+<pre><code class="yaml">---
+app_git:     https://github.com/noidi/hello-java.git
+ansible_git: https://github.com/solita/jenkins-ansible-demo.git
+
+qa_inventory:   environments/qa/inventory
+prod_inventory: environments/prod/inventory
+
+solita_jenkins_users:
+  - admin
+</code></pre>
+    </section>
+
+    <section class="slide">
       <div class="heading"><h2>Dev Environment</h2></div>
       <h3><code>Vagrantfile</code></h3>
 <pre><code class="ruby"><span class="vagrant-synced-folder">config.vm.synced_folder '../hello-java', '/hello-java'</span>
