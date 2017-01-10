@@ -209,6 +209,14 @@ jenkins-ansible-demo3
     </section>
 
     <section class="slide">
+      <div class="heading"><h2>Local Environment</h2></div>
+      <h3><code>environments/local/inventory</code></h3>
+<pre><code class="ini">[app]
+localhost ansible_connection=local
+</code></pre>
+    </section>
+
+    <section class="slide">
       <div class="heading"><h2>Server Configuration</h2></div>
       <h3><code>jenkins.yml</code></h3>
 <pre><code class="yaml">- hosts: jenkins
