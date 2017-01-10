@@ -390,21 +390,12 @@ a:hover, a:focus {
   position: relative;
 }
 
-.heading h2:after
-{
-  content: "";
-  position: absolute;
-  left: 0px;
-  width: 1.5em;
-  bottom: -15px;
-  border-bottom: 5px solid #EF4A8D;
-}
-
-.heading h1:before
+.heading h1:before,
+.heading h2:before
 {
   content: "";
   position: absolute;
   width: 1.5em;
-  bottom: -15px;
-  border-bottom: 10px solid #EF4A8D;
+  bottom: -0.1em;
+  border-bottom: 0.1em solid #EF4A8D;
 }
