@@ -121,7 +121,7 @@
     </section>
 
     <section class="slide">
-      <h1>Example Time</h1>
+      <h1>Example</h1>
     </section>
 
     <section class="slide">
@@ -231,7 +231,7 @@ localhost ansible_connection=local
     </section>
 
     <section class="slide">
-      <div class="heading"><h2>Job Config</h2></div>
+      <div class="heading"><h2>Job Configuration</h2></div>
       <div class="slide move-left">
         <h3><code>jobs/Hello.groovy</code> (Job DSL)</h3>
 <pre><code class="groovy">pipelineJob('hello') {
@@ -248,23 +248,19 @@ localhost ansible_connection=local
     </section>
 
     <section class="slide">
-      <div class="heading"><h2>Pipeline Config &ndash; Vars</h2></div>
-      <h3><code>jobs/pipeline/Hello.groovy.j2</code></h3>
-<pre><code class="groovy">APP_GIT = "{{ app_git | default('') }}"
+      <div class="heading"><h2>Pipeline Configuration</h2></div>
+      <div class="slide move-left" id="pipeline-dsl">
+      <h3><code>jobs/pipeline/Hello.groovy.j2</code> (Pipeline DSL)</h3>
+<pre class="sliding"><code class="pipeline groovy"><span class="pipeline-vars">APP_GIT = "{{ app_git | default('') }}"
 APP_PATH = "{{ app_path | default('') }}"
 
 ANSIBLE_GIT = "{{ ansible_git | default('') }}"
 ANSIBLE_PATH = "{{ ansible_path | default('') }}"
 
 QA_INVENTORY = "{{ qa_inventory }}"
-PROD_INVENTORY = "{{ prod_inventory }}"
-</code></pre>
-    </section>
+PROD_INVENTORY = "{{ prod_inventory }}"</span>
 
-    <section class="slide">
-      <div class="heading"><h2>Pipeline Config &ndash; Checkout</h2></div>
-      <h3><code>jobs/pipeline/Hello.groovy.j2</code></h3>
-<pre><code class="groovy"><span class="pipeline-checkout-stage">node {
+<span class="pipeline-checkout">node {
     stage('Checkout') {</span>
         <span class="pipeline-checkout-git">if (APP_GIT) {
             checkout([
@@ -275,21 +271,41 @@ PROD_INVENTORY = "{{ prod_inventory }}"
                 ]],
                 userRemoteConfigs: [[url: APP_GIT]]
             ])
-        }</span><span class="pipeline-checkout-rsync"> else if (APP_PATH) {
+        }</span> <span class="pipeline-checkout-rsync">else if (APP_PATH) {
             // Ignore "permission denied" errors
             sh "rsync -av ${APP_PATH}/ app | true"
         }</span>
-    <span class="pipeline-checkout-stage">}</span>
-</code></pre>
-      <div id="pipeline-checkout-stage" class="slide"></div>
-      <div id="pipeline-checkout-git" class="slide"></div>
-      <div id="pipeline-checkout-rsync" class="slide"></div>
-    </section>
 
-    <section class="slide">
-      <div class="heading"><h2>Pipeline Config &ndash; Deploy</h2></div>
-      <h3><code>jobs/pipeline/Hello.groovy.j2</code></h3>
-<pre><code class="groovy">    stage('Deploy to QA') {
+        <span class="pipeline-checkout-ansible">if (ANSIBLE_GIT) {
+            checkout([
+                $class: 'GitSCM',
+                extensions: [[
+                    $class: 'RelativeTargetDirectory',
+                    relativeTargetDir: 'ansible'
+                ]],
+                userRemoteConfigs: [[url: ANSIBLE_GIT]]
+            ])
+        } else if (ANSIBLE_PATH) {
+            // Ignore "permission denied" errors
+            sh "rsync -av ${ANSIBLE_PATH}/ ansible | true"
+        }</span>
+    <span class="pipeline-checkout">}</span>
+
+    <span class="pipeline-build">stage('Build') {
+        dir('app') {
+            sh 'mvn -B package'
+            archive 'target/hello.jar'
+        }
+    }</span>
+
+    <span class="pipeline-test">stage('Test') {
+        dir('app') {
+            sh 'mvn -B verify'
+            junit 'target/failsafe-reports/*.xml'
+        }
+    }</span>
+
+    <span class="pipeline-deploy-qa">stage('Deploy to QA') {
         dir('ansible') {
             ansiblePlaybook([
                 playbook: 'deploy.yml',
@@ -299,12 +315,17 @@ PROD_INVENTORY = "{{ prod_inventory }}"
                 ],
             ])
         }
-    }
+    }</span>
 </code></pre>
-    </section>
-
-    <section class="slide">
-      <div class="heading"><h2>Pipeline Config &ndash; Result</h2></div>
+        <div id="pipeline-vars" class="slide"></div>
+        <div id="pipeline-checkout" class="slide"></div>
+        <div id="pipeline-checkout-git" class="slide"></div>
+        <div id="pipeline-checkout-rsync" class="slide"></div>
+        <div id="pipeline-checkout-ansible" class="slide"></div>
+        <div id="pipeline-build" class="slide"></div>
+        <div id="pipeline-test" class="slide"></div>
+        <div id="pipeline-deploy-qa" class="slide"></div>
+      </div>
       <img class="slide move-left" src="img/pipeline_checkout.png">
       <img class="slide move-left" src="img/pipeline_deploy.png">
     </section>

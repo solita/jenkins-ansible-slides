@@ -44,6 +44,15 @@ i {
   font-weight: bold;
 }
 
+.sliding {
+    height: 15em;
+    overflow: hidden;
+}
+
+code span {
+    transition: opacity 0.3s;
+}
+
 .vagrant-synced-folder {
   opacity: 0.1;
 }
@@ -133,47 +142,6 @@ i {
   font-weight: bold;
 }
 
-/* pipeline-checkout-stage */
-
-.pipeline-checkout-stage {
-  opacity: 0.1;
-}
-
-.on-slide-pipeline-checkout-git .pipeline-checkout-stage, .on-slide-pipeline-checkout-rsync .pipeline-checkout-stage {
-  opacity: 0.8;
-}
-
-.on-slide-pipeline-checkout-stage .pipeline-checkout-stage {
-  opacity: 1.0;
-  font-weight: bold;
-}
-
-/* pipeline-checkout-git */
-
-.pipeline-checkout-git {
-  opacity: 0.1;
-}
-
-.on-slide-pipeline-checkout-rsync .pipeline-checkout-git {
-  opacity: 0.8;
-}
-
-.on-slide-pipeline-checkout-git .pipeline-checkout-git {
-  opacity: 1.0;
-  font-weight: bold;
-}
-
-/* pipeline-checkout-rsync */
-
-.pipeline-checkout-rsync {
-  opacity: 0.1;
-}
-
-.on-slide-pipeline-checkout-rsync .pipeline-checkout-rsync {
-  opacity: 1.0;
-  font-weight: bold;
-}
-
 /* project-env */
 
 .project-env {
@@ -246,4 +214,166 @@ i {
 
 .on-slide-project-vagrant .project-vagrant .file {
     font-weight: bold;
+}
+
+/* pipeline */
+
+.on-slide-pipeline-vars #pipeline-dsl,
+.on-slide-pipeline-checkout #pipeline-dsl,
+.on-slide-pipeline-checkout-git #pipeline-dsl,
+.on-slide-pipeline-checkout-rsync #pipeline-dsl,
+.on-slide-pipeline-checkout-ansible #pipeline-dsl,
+.on-slide-pipeline-build #pipeline-dsl,
+.on-slide-pipeline-test #pipeline-dsl,
+.on-slide-pipeline-deploy-qa #pipeline-dsl
+{
+    transform: none;
+}
+
+code.pipeline {
+    transition: transform 1.0s;
+}
+
+code.pipeline span {
+    transition: opacity 1.0s;
+}
+
+/* pipeline-vars */
+
+.pipeline-vars {
+    opacity: 0.1;
+}
+
+.on-slide-pipeline-vars .pipeline-vars {
+    opacity: 1.0;
+    font-weight: bold;
+}
+
+.on-slide-pipeline-checkout .pipeline-vars {
+    opacity: 0.8;
+}
+
+/* pipeline-checkout */
+
+.pipeline-checkout {
+    opacity: 0.1;
+}
+
+.on-slide-pipeline-checkout .pipeline-checkout {
+    opacity: 1.0;
+    font-weight: bold;
+}
+
+.on-slide-pipeline-checkout code.pipeline {
+    transform: translate(0, -8em);
+}
+
+.on-slide-pipeline-checkout-git .pipeline-checkout,
+.on-slide-pipeline-checkout-rsync .pipeline-checkout,
+.on-slide-pipeline-checkout-ansible .pipeline-checkout,
+.on-slide-pipeline-build .pipeline-checkout
+{
+    opacity: 0.8;
+}
+
+/* pipeline-checkout-git */
+
+.pipeline-checkout-git {
+    opacity: 0.1;
+}
+
+.on-slide-pipeline-checkout-git .pipeline-checkout-git {
+    opacity: 1.0;
+    font-weight: bold;
+}
+
+.on-slide-pipeline-checkout-git code.pipeline {
+    transform: translate(0, -11.5em);
+}
+
+.on-slide-pipeline-checkout-rsync .pipeline-checkout-git {
+    opacity: 0.8;
+}
+
+/* pipeline-checkout-rsync */
+
+.pipeline-checkout-rsync {
+    opacity: 0.1;
+}
+
+.on-slide-pipeline-checkout-rsync .pipeline-checkout-rsync {
+    opacity: 1.0;
+    font-weight: bold;
+}
+
+.on-slide-pipeline-checkout-rsync code.pipeline {
+    transform: translate(0, -16em);
+}
+
+/* pipeline-checkout-ansible */
+
+.pipeline-checkout-ansible {
+    opacity: 0.1;
+}
+
+.on-slide-pipeline-checkout-ansible .pipeline-checkout-ansible {
+    opacity: 1.0;
+    font-weight: bold;
+}
+
+.on-slide-pipeline-checkout-ansible code.pipeline {
+    transform: translate(0, -31em);
+}
+
+.on-slide-pipeline-build .pipeline-checkout-ansible {
+    opacity: 0.8;
+}
+
+/* pipeline-build */
+
+.pipeline-build {
+    opacity: 0.1;
+}
+
+.on-slide-pipeline-build .pipeline-build {
+    opacity: 1.0;
+    font-weight: bold;
+}
+
+.on-slide-pipeline-build code.pipeline {
+    transform: translate(0, -46em);
+}
+
+.on-slide-pipeline-test .pipeline-build {
+    opacity: 0.8;
+}
+
+/* pipeline-test */
+
+.pipeline-test {
+    opacity: 0.1;
+}
+
+.on-slide-pipeline-test .pipeline-test {
+    opacity: 1.0;
+    font-weight: bold;
+}
+
+.on-slide-pipeline-test code.pipeline {
+    transform: translate(0, -56em);
+}
+
+/* pipeline-deploy-qa */
+
+.pipeline-deploy-qa {
+    opacity: 0.1;
+}
+
+.on-slide-pipeline-deploy-qa .pipeline-deploy-qa {
+    opacity: 1.0;
+    font-weight: bold;
+}
+
+.on-slide-pipeline-deploy-qa code.pipeline {
+    transform: translate(0, -67em);
 }
