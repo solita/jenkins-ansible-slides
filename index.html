@@ -152,6 +152,22 @@
     </section>
 
     <section class="slide">
+      <div class="heading"><h2>QA Environment</h2></div>
+      <h3><code>environments/qa/inventory</code></h3>
+<pre><code class="ini">[app]
+jenkins-ansible-demo2
+</code></pre>
+    </section>
+
+    <section class="slide">
+      <div class="heading"><h2>Prod Environment</h2></div>
+      <h3><code>environments/prod/inventory</code></h3>
+<pre><code class="ini">[app]
+jenkins-ansible-demo3
+</code></pre>
+    </section>
+
+    <section class="slide">
       <div class="heading"><h2>CI Environment</h2></div>
       <h3><code>environments/ci/inventory</code></h3>
 <pre><code class="ini">[jenkins]
@@ -165,22 +181,6 @@ prod_inventory: environments/prod/inventory
 
 solita_jenkins_users:
   - admin
-</code></pre>
-    </section>
-
-    <section class="slide">
-      <div class="heading"><h2>QA Environment</h2></div>
-      <h3><code>environments/qa/inventory</code></h3>
-<pre><code class="ini">[app]
-jenkins-ansible-demo2
-</code></pre>
-    </section>
-
-    <section class="slide">
-      <div class="heading"><h2>Prod Environment</h2></div>
-      <h3><code>environments/prod/inventory</code></h3>
-<pre><code class="ini">[app]
-jenkins-ansible-demo3
 </code></pre>
     </section>
 
